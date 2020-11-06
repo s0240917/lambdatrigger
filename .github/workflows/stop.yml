@@ -1,10 +1,10 @@
 on:
   push:
-    branches: [ main ]
-  schedule:
-    - cron: "*/3 * * * *"
+    branches: [ main1 ]
+ # schedule:
+  #  - cron: "*/5 * * * *"
     
-name: lambda trigger stop
+name: lambda trigger
 
 jobs:
   trigger:
@@ -30,4 +30,5 @@ jobs:
    
     - run: | 
         #aws ec2 start-instances --instance-ids i-0c3dc20ba11f4efaf
-        aws ec2 stop-instances --instance-ids 'aws ec2 describe-instances --filters "Name=tag:Type,Values=Scheduled" --query 'Reservations[].Instances[].InstanceId' --output text'
+        aws ec2 stop-instances --instance-ids `aws ec2 describe-instances --filters "Name=tag:Type,Values=Scheduled" --query 'Reservations[].Instances[].InstanceId' --output text`
+    #- name: installimg python
