@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "*/3 * * * *"
     
-name: lambda trigger
+name: lambda trigger stop
 
 jobs:
   trigger:
@@ -30,4 +30,4 @@ jobs:
    
     - run: | 
         #aws ec2 start-instances --instance-ids i-0c3dc20ba11f4efaf
-        aws ec2 start-instances --instance-ids `aws ec2 describe-instances --filters "Name=tag:Type,Values=Scheduled" --query 'Reservations[].Instances[].InstanceId' --output text
+        aws ec2 stop-instances --instance-ids `aws ec2 describe-instances --filters "Name=tag:Type,Values=Scheduled" --query 'Reservations[].Instances[].InstanceId' --output text
