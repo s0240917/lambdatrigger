@@ -27,4 +27,6 @@ jobs:
         secretAccessKey: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         #region: ap-south-1
         functionName: ec2stop
+        payload: ec2stop
+      
  
