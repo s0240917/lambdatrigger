@@ -33,7 +33,8 @@ jobs:
     - name: installing boto3
       run: |
         sudo apt-get install -y python-boto3
-    - run: /usr/bin/python start.py
+        pip install --upgrade --user boto3
+    - run: python start.py
       
      
 
