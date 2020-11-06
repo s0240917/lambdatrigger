@@ -20,13 +20,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1  # give your aws_region
     
-    - name: Trigger AWS Lamba
-      uses: KhannaAbhinav/trigger-aws-lambda-action@v1
-      with:
-        accessKeyId: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secretAccessKey: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        #region: ap-south-1
-        functionName: ec2stop
-        payload: ec2stop
-      
+  
+    - name: aws ec2   
  
