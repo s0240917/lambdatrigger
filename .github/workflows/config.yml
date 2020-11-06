@@ -21,5 +21,8 @@ jobs:
         aws-region: ap-south-1  # give your aws_region
     
   
-    - name: aws ec2   
+    - name: aws ec2 
+      run: |
+        aws ec2
+        
  
