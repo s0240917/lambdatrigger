@@ -32,7 +32,7 @@ jobs:
         #architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
     - name: installing boto3
       run: |
-        sudo apt-get install -y python-boto3
+        #sudo apt-get install -y python-boto3
         pip install --upgrade --user boto3
     - run: python start.py
       
