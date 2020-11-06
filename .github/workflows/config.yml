@@ -19,22 +19,24 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1  # give your aws_region
-    
+        
+            
   
     - name: aws ec2 
       run: |
         sudo apt-get install awscli
    
-    - name: installimg python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+    - run: aws ec2 start-instances --instance-ids i-0c3dc20ba11f4efaf
+    #- name: installimg python
+      #uses: actions/setup-python@v2
+      #with:
+       # python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
         #architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-    - name: installing boto3
-      run: |
+    #- name: installing boto3
+      #run: |
         #sudo apt-get install -y python-boto3
-        pip install --upgrade --user boto3
-    - run: python start.py
+        #pip install --upgrade --user boto3
+    #- run: python start.py
       
      
 
