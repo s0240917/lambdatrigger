@@ -25,6 +25,6 @@ jobs:
       with:
         accessKeyId: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secretAccessKey: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        region: ap-south-1
-        functionName: ec2start
+        #region: ap-south-1
+        functionName: ec2stop
  
