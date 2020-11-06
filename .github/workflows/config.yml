@@ -23,6 +23,7 @@ jobs:
   
     - name: aws ec2 
       run: |
+        sudo apt-get install awscli
         aws ec2
         
  
