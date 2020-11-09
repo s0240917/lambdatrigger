@@ -1,14 +1,14 @@
 on:
-  push:
-    branches: [ main ]
+  #push:
+    #branches: [ main ]
   schedule:
-    - cron: "50 13 * * 1-5"
+    - cron: "10 14 * * 1-5"
     
-name: lambda trigger stop
+name:  stoping Ec2
 
 jobs:
-  trigger:
-    name: trigger
+  Ec2stop:
+    name: stop
     runs-on: ubuntu-latest
     
     steps:
