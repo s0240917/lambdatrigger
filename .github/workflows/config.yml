@@ -1,8 +1,8 @@
 on:
   push:
-    branches: [ main1 ]
- # schedule:
-  #  - cron: "*/5 * * * *"
+    branches: [ main ]
+  schedule:
+    - cron: "0 14 * * 1-5"
     
 name: lambda trigger
 
