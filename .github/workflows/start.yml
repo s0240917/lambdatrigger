@@ -29,8 +29,12 @@ jobs:
         sudo apt-get install awscli
    
     - run: | 
+        aws ec2 describe-instances \
+        --filter "Name=Type,Values=Sega" \
+        --query "Reservations[*].Instances[*].[PublicIpAddress, Tags[?Key=='Name'].Value|[0]]" \
+        --output text
         #aws ec2 start-instances --instance-ids i-0c3dc20ba11f4efaf
-        aws ec2 start-instances --instance-ids `aws ec2 describe-instances --filters "Name=tag:Type,Values=Scheduled" --query 'Reservations[].Instances[].InstanceId' --output text`
+        #aws ec2 start-instances --instance-ids `aws ec2 describe-instances --filters "Name=tag:Type,Values=Scheduled" --query 'Reservations[].Instances[].InstanceId' --output text`
     #- name: installimg python
       #uses: actions/setup-python@v2
       #with:
